@@ -67,7 +67,34 @@ namespace ddzz7
             Console.WriteLine($"Содержание книги: {content}");
         }
     }
-    
+    class Plane
+    {
+        public string model{get;set;}
+        public string color{get;set;}
+        public int passengers{get;set;}
+        public Plane(string model,string color,int passengers)
+        {
+            this.model=model;
+            this.color=color;
+            this.passengers=passengers;
+        }
+        public void Show()
+        {
+            Console.WriteLine($"Самолёт модели {model}, цвета {color}");
+        }
+        public void Refueling()
+        {
+            Console.WriteLine("Самолёт заправляется");
+        }
+        public void Flying()
+        {
+             Console.WriteLine($"Самолёт летит с {passengers} пассажирами на борту");
+        }
+        public void Landing()
+        {
+            Console.WriteLine($"Самолёт приземляется с {passengers} пассажирами на борту");
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -98,6 +125,20 @@ namespace ddzz7
         x.content.content=c;
         x.Show();
 
+        Console.WriteLine("ZADANIE#4");
+        string model,color;
+        int passengers;
+        Console.WriteLine("Модель самолёта: ");
+        model=Console.ReadLine();
+        Console.WriteLine("Цвет самолёта: ");
+        color=Console.ReadLine();
+        Console.WriteLine("Количество пассажиров на борту самолёта: ");
+        passengers=Convert.ToInt16(Console.ReadLine());
+        Plane y=new Plane(model,color,passengers);
+        y.Show();
+        y.Flying();
+        y.Landing();
+        y.Refueling();
         }
     }
 }
